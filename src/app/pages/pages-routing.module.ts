@@ -5,8 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: () =>
-      import('./pages/pages.module').then((m) => m.PagesModule),
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
     path: '**',
@@ -15,7 +14,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class PagesRoutingModule {}
